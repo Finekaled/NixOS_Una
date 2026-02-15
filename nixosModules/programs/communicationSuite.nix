@@ -6,7 +6,7 @@
   };
 
   config = {
-    # List packages used for office/notes functions. To search, run:
+    # List packages used for communication app functions. To search, run:
     # $ nix search wget
     programs.discord.enable = true;
     programs.element-desktop.enable = true;

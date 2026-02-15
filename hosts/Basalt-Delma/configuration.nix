@@ -1,3 +1,5 @@
+# sudo nixos-rebuild -I nixos-config=/etc/nixos/hosts/Basalt-Delma/configuration.nix
+
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -8,14 +10,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../nixosModules/guis/desktopEnvironments/gnome.nix
-      ./../../nixosModules/guis/windowManagers/hyprland.nix
-      ./../../nixosModules/guis/windowManagers/niri.nix
+      # ./../../nixosModules/guis/desktopEnvironments/gnome.nix
+      # ./../../nixosModules/guis/windowManagers/hyprland.nix
+      # ./../../nixosModules/guis/windowManagers/niri.nix
       ./../../nixosModules/programs/communicationSuite.nix
-      ./../../nixosModules/programs/experimentalFeatures.nix
-      ./../../nixosModules/programs/games.nix
-      ./../../nixosModules/programs/officeSuite.nix
-      ./../../nixosModules/programs/systemPackages.nix
+      # ./../../nixosModules/programs/experimentalFeatures.nix
+      # ./../../nixosModules/programs/games.nix
+      # ./../../nixosModules/programs/officeSuite.nix
+      # ./../../nixosModules/programs/systemPackages.nix
     ];
 
   # Bootloader.
