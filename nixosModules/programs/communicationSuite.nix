@@ -10,6 +10,7 @@
     # $ nix search wget
     programs.discord.enable = true;
     programs.element-desktop.enable = true;
+    programs.thunderbird.enable = true;
     programs.viber.enable = true;
     programs.whatsapp-electron.enable = true;
   };
