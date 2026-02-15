@@ -17,6 +17,7 @@
       ./../../nixosModules/programs/officeSuite.nix
       ./../../nixosModules/programs/systemPackages.nix
     ];
+  services.communicationSuite.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
