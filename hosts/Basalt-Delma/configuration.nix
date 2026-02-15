@@ -8,6 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../nixosModules/guis/desktopEnvironments/gnome.nix
+      ./../../nixosModules/guis/windowManagers/hyprland.nix
+      ./../../nixosModules/guis/windowManagers/niri.nix
+      ./../../nixosModules/programs/communicationSuite.nix
+      ./../../nixosModules/programs/experimentalFeatures.nix
+      ./../../nixosModules/programs/games.nix
+      ./../../nixosModules/programs/officeSuite.nix
+      ./../../nixosModules/programs/systemPackages.nix
     ];
 
   # Bootloader.
