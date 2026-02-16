@@ -14,12 +14,14 @@
       # ./../../nixosModules/guis/windowManagers/hyprland.nix
       # ./../../nixosModules/guis/windowManagers/niri.nix
       ./../../nixosModules/programs/communicationSuite.nix
-      # ./../../nixosModules/programs/experimentalFeatures.nix
-      # ./../../nixosModules/programs/games.nix
+      ./../../nixosModules/programs/experimentalFeatures.nix
+      ./../../nixosModules/programs/games.nix
       # ./../../nixosModules/programs/officeSuite.nix
       # ./../../nixosModules/programs/systemPackages.nix
     ];
   communicationSuite.enable = true;
+  experimentalFeatures.enable = true;
+  games.enable = true;
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -101,9 +103,6 @@
 
   # Install apps individually (not in a list).
   programs.firefox.enable = true;
-  
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

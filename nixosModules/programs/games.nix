@@ -1,9 +1,18 @@
-{ config, pkgs, ... }:
+{ config, imports, lib, pkgs, ... }:
 
 {
-  # List packages used for office/notes functions. To search, run:
-  # $ nix search wget
-  programs.kdePackages.bovo.enable = true;
-  programs.kdePackages.kmines.enable = true;
-  programs.steam.enable = true;
+  options = {
+    games.enable =
+      lib.mkEnableOption "enable games";
+  };
+
+  config = lib.mkIf config.communicationSuite.enable { 
+    users.users.andrew = {
+      packages = with pkgs; [
+        kdePackages.bovo
+        kdePackages.kmines
+        steam
+      ];
+    };
+  };
 }

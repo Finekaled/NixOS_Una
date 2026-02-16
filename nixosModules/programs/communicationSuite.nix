@@ -11,10 +11,12 @@
       packages = with pkgs; [
         discord
         element-desktop
-        # thunderbird
+        thunderbird
         viber
         whatsapp-electron
       ];
     };
+    # programs.discord.enable = true;
+    # programs.element-desktop.enable = true;
   };
 }
