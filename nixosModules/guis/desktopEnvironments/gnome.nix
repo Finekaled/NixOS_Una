@@ -1,7 +1,13 @@
-{ config, pkgs, ... }:
+{ config, imports, lib, pkgs, ... }:
 
 {
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  options = {
+    gnome.enable =
+      lib.mkEnableOption "enable gnome";
+  };
+
+  config = lib.mkIf config.gnome.enable { 
+    # Enable the GNOME Desktop Environment.
+    services.desktopManager.gnome.enable = true;
+  };
 }

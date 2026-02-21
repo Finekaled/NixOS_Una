@@ -1,6 +1,18 @@
-{ config, pkgs, ... }:
+{ config, imports, lib, pkgs, ... }:
 
 {
-  # Packages required to run the Niri Scrolling Window Manager.
-  programs.niri.enable = true;
+  options = {
+    niri.enable =
+      lib.mkEnableOption "enable niri";
+  };
+
+  config = lib.mkIf config.niri.enable { 
+    users.users.andrew = {
+      packages = with pkgs; [
+        niri
+        kitty
+        rofi
+      ];
+    };
+  };
 }

@@ -11,23 +11,30 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../nixosModules/guis/desktopEnvironments/gnome.nix
-      # ./../../nixosModules/guis/windowManagers/hyprland.nix
-      # ./../../nixosModules/guis/windowManagers/niri.nix
+      ./../../nixosModules/guis/windowManagers/hyprland.nix
+      ./../../nixosModules/guis/windowManagers/niri.nix
       ./../../nixosModules/programs/communicationSuite.nix
       ./../../nixosModules/programs/experimentalFeatures.nix
       ./../../nixosModules/programs/games.nix
       ./../../nixosModules/programs/officeSuite.nix
       ./../../nixosModules/programs/systemPackages.nix
+      ./../../nixosModules/programs/eyeCandy.nix
     ];
   communicationSuite.enable = true;
   experimentalFeatures.enable = true;
   games.enable = true;
   officeSuite.enable = true;
+  eyeCandy.enable = true;
   systemPackages.enable = true;
+  gnome.enable = true;
+  hyprland.enable = true;
+  niri.enable = false;
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  services.displayManager.sddm.enable = true;
 
   networking.hostName = "Sinai-Racerunner"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
