@@ -14,6 +14,10 @@
         rofi
       ];
     };
+    programs.hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
   };
 }
 # I think I need to enable sddm as a service.
