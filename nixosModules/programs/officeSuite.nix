@@ -1,8 +1,17 @@
-{ config, pkgs, ... }:
+{ config, imports, lib, pkgs, ... }:
 
 {
-  # List packages used for office/notes functions. To search, run:
-  # $ nix search wget
-  programs.libreoffice.enable = true;
-  programs.trilium-desktop.enable = true;
+  options = {
+    officeSuite.enable =
+      lib.mkEnableOption "enable officeSuite";
+  };
+
+  config = lib.mkIf config.officeSuite.enable { 
+    users.users.andrew = {
+      packages = with pkgs; [
+        libreoffice
+        trilium-desktop
+      ];
+    };
+  };
 }

@@ -10,18 +10,20 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # ./../../nixosModules/guis/desktopEnvironments/gnome.nix
+      ./../../nixosModules/guis/desktopEnvironments/gnome.nix
       # ./../../nixosModules/guis/windowManagers/hyprland.nix
       # ./../../nixosModules/guis/windowManagers/niri.nix
       ./../../nixosModules/programs/communicationSuite.nix
       ./../../nixosModules/programs/experimentalFeatures.nix
       ./../../nixosModules/programs/games.nix
-      # ./../../nixosModules/programs/officeSuite.nix
-      # ./../../nixosModules/programs/systemPackages.nix
+      ./../../nixosModules/programs/officeSuite.nix
+      ./../../nixosModules/programs/systemPackages.nix
     ];
   communicationSuite.enable = true;
   experimentalFeatures.enable = true;
   games.enable = true;
+  officeSuite.enable = true;
+  systemPackages.enable = true;
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -57,10 +59,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

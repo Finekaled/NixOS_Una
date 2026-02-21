@@ -6,7 +6,7 @@
       lib.mkEnableOption "enable games";
   };
 
-  config = lib.mkIf config.communicationSuite.enable { 
+  config = lib.mkIf config.games.enable { 
     users.users.andrew = {
       packages = with pkgs; [
         kdePackages.bovo
